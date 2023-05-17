@@ -8,7 +8,7 @@
         {
             "kind": "main",
             "tag": "weather-widget",
-            "url": "https://your_github_username.github.io/CustomWidget/WeatherWidget.js",
+            "url": "https://raw.githubusercontent.com/Planifyit/Realtime_weather/main/WeatherWidget.js",
             "integrity": "",
             "ignoreIntegrity": true
         }
