@@ -1,4 +1,4 @@
-((function () {
+(function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
         <style>
@@ -77,52 +77,31 @@
         </div>
     `;
 
-    class Calculator extends HTMLElement {
+    class CustomCalculator extends HTMLElement {
         constructor() {
             super();
-            this._shadowRoot = this.attachShadow({mode: 'open'});
+            this._shadowRoot = this.attachShadow({mode: "open"});
             this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-
-            this._display = this._shadowRoot.querySelector('.display');
-            this._buttons = Array.from(this._shadowRoot.querySelectorAll('button'));
-            this._operation = '';
+            this._displayElement = this._shadowRoot.querySelector('.display');
+            this._buttonsContainer = this._shadowRoot.querySelector('.buttons');
+            this._buttonsContainer.addEventListener('click', this._buttonClicked.bind(this));
+            this._expression = '';
         }
 
-        connectedCallback() {
-            this._buttons.forEach(button => {
-                button.addEventListener('click', this._onButtonClick.bind(this));
-            });
-        }
-
-        _onButtonClick(event) {
-            const value = event.target.textContent;
-
-            switch(value) {
-                case '+':
-                case '-':
-                case '*':
-                case '/':
-                    this._operation += ` ${value} `;
-                    break;
-                case '=':
-                    try {
-                        this._display.value = eval(this._operation.replace(/\s/g, ''));
-                        this._operation = '';
-                    } catch(e) {
-                        console.error(e);
-                        this._display.value = 'Error';
-                        this._operation = '';
-                    }
-                    break;
-                default:
-                    this._operation += value;
+        _buttonClicked(event) {
+            const clickedButtonValue = event.target.innerText;
+            if (clickedButtonValue === '=') {
+                try {
+                    this._expression = eval(this._expression).toString();
+                } catch (error) {
+                    this._expression = 'ERROR';
+                }
+            } else {
+                this._expression += clickedButtonValue;
             }
-
-            if (value !== '=') {
-                this._display.value = this._operation;
-            }
+            this._displayElement.value = this._expression;
         }
     }
 
-    customElements.define('calculator-widget', Calculator);
+    customElements.define('custom-calculator', CustomCalculator);
 })();
