@@ -1,0 +1,40 @@
+{
+	"name": "calculatorwidget",
+	"description": "Simple Calculator Widget",
+	"newInstancePrefix": "calculatorwidget",
+	"eula": "",
+	"vendor": "Your Name",
+	"license": "",
+	"id": "calculatorwidget",
+	"version": "1.0.1",
+	"icon": "",
+	"webcomponents": [
+		{
+			"kind": "main",
+			"tag": "calculator-widget",
+			"url": "https://Your_GitHub_Username.github.io/CalculatorWidget/CalculatorWidget.js",
+			"integrity": "",
+			"ignoreIntegrity": true
+		}		
+	],
+	"properties": {
+		"width": {
+			"type": "integer",
+			"default": 300
+		},
+		"height": {
+			"type": "integer",
+			"default": 400
+		}
+	},
+	"methods": {
+		"clear": {
+			"description": "Clear the calculator"
+		}
+	},
+	"events": {
+		"onCalculation": {
+			"description": "Called when a calculation is performed."
+		}
+	}
+}
