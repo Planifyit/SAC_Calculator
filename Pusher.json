@@ -1,0 +1,40 @@
+{
+  "name": "pushmebutton",
+  "description": "Push Me Button",
+  "newInstancePrefix": "pushmebutton",
+  "eula": "",
+  "vendor": "Vahan",
+  "license": "",
+  "id": "pushmebutton",
+  "version": "1.0.1",
+  "icon": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "push-me-button",
+      "url": "https://planifyit.github.io/Realtime_weather/PushMeButton.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 192
+    },
+    "height": {
+      "type": "integer",
+      "default": 32
+    }
+  },
+  "methods": {
+    "pushButton": {
+      "description": "Push the button"
+    }
+  },
+  "events": {
+    "onPush": {
+      "description": "Called when the button is pushed."
+    }
+  }
+}
