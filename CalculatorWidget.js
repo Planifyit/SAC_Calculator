@@ -1,4 +1,3 @@
-
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = `
@@ -57,7 +56,7 @@
                     break;
                 case '=':
                     try {
-                        this._display.value = eval(this._operation);
+                        this._display.value = eval(this._operation.replace(/\s/g, ''));
                         this._operation = '';
                     } catch(e) {
                         console.error(e);
@@ -69,7 +68,9 @@
                     this._operation += value;
             }
 
-            this._display.value = this._operation;
+            if (value !== '=') {
+                this._display.value = this._operation;
+            }
         }
     }
 
