@@ -1,24 +1,31 @@
 (function () {
     let tmpl = document.createElement('template');
     tmpl.innerHTML = 
-    `<div>
-        <p>Scroll down and then click the button to return to the top</p>
-        <button id="scrollBtn">Go to top</button>
-    </div>`;   
+    `<button type="button" id="myBtn">Helper Button</button>` ;   
    
-    class ScrollToTop extends HTMLElement {
+    class PerformanceHelp extends HTMLElement {
         constructor() {
             super();
-            this._shadowRoot = this.attachShadow({mode: "open"});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
-            this._buttonElement = this._shadowRoot.querySelector('#scrollBtn');
-            this._buttonElement.addEventListener('click', this.scrollToTop.bind(this));
+            this.init();           
         }
 
-        scrollToTop() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        init() {            
+              
+            let shadowRoot = this.attachShadow({mode: "open"});
+            shadowRoot.appendChild(tmpl.content.cloneNode(true));
+            this.addEventListener("click", event => {
+            var event = new Event("onClick");
+            this.fireChanged();           
+            this.dispatchEvent(event);
+            });           
         }
+
+        fireChanged() {
+            console.log("OnClick Triggered");     
+            
+        }        
+        
     }
 
-    customElements.define('scroll-to-top-button', ScrollToTop);
+    customElements.define('custom-button', PerformanceHelp);
 })();
