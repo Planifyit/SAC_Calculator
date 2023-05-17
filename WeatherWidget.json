@@ -1,0 +1,16 @@
+{
+    "name": "weather-widget",
+    "description": "A custom widget that displays real-time weather data",
+    "properties": [],
+    "methods": [],
+    "events": [],
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "weather-widget",
+            "url": "https://your_github_username.github.io/CustomWidget/WeatherWidget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ]
+}
