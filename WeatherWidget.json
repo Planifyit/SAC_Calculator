@@ -1,16 +1,40 @@
 {
-    "name": "weather-widget",
-    "description": "A custom widget that displays real-time weather data",
-    "properties": [],
-    "methods": [],
-    "events": [],
-    "webcomponents": [
-        {
-            "kind": "main",
-            "tag": "weather-widget",
-            "url": "https://raw.githubusercontent.com/Planifyit/Realtime_weather/main/WeatherWidget.js",
-            "integrity": "",
-            "ignoreIntegrity": true
-        }
-    ]
+  "name": "weatherwidget",
+  "description": "Weather Widget",
+  "newInstancePrefix": "weatherwidget",
+  "eula": "",
+  "vendor": "Your Name",
+  "license": "MIT",
+  "id": "weatherwidget",
+  "version": "1.0.0",
+  "icon": "",
+  "webcomponents": [
+    {
+      "kind": "main",
+      "tag": "weather-widget",
+      "url": "https://planifyit.github.io/Realtime_weather/WeatherWidget.js",
+      "integrity": "",
+      "ignoreIntegrity": true
+    }
+  ],
+  "properties": {
+    "width": {
+      "type": "integer",
+      "default": 192
+    },
+    "height": {
+      "type": "integer",
+      "default": 32
+    }
+  },
+  "methods": {
+    "updateWeather": {
+      "description": "Update the weather information"
+    }
+  },
+  "events": {
+    "onWeatherUpdate": {
+      "description": "Called when the weather information is updated."
+    }
+  }
 }
