@@ -3,7 +3,7 @@
 	"description": "Simple Calculator Widget",
 	"newInstancePrefix": "calculatorwidget",
 	"eula": "",
-	"vendor": "Your Name",
+	"vendor": "Planifyit",
 	"license": "",
 	"id": "calculatorwidget",
 	"version": "1.0.1",
@@ -12,7 +12,7 @@
 		{
 			"kind": "main",
 			"tag": "calculator-widget",
-			"url": "https://Your_GitHub_Username.github.io/CalculatorWidget/CalculatorWidget.js",
+			"url": "https://planifyit.github.io/Realtime_weather/CalculatorWidget.js",
 			"integrity": "",
 			"ignoreIntegrity": true
 		}		
