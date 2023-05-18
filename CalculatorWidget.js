@@ -40,7 +40,9 @@
                 color: #fff;
                 border-radius: 4px;
             }
-
+            .buttons > button.reset {
+    background-color: red;
+}
             .buttons > button:active {
                 transform: scale(0.95);
             }
@@ -70,7 +72,7 @@
 
             <div class="buttons">
         <button>%</button>
-        <button>C</button>
+        <button class="reset">C</button>
         <button><</button>
         <button>/</button>
         <button>7</button>
