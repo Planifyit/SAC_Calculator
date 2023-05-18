@@ -87,7 +87,8 @@
         <button>+</button>
         <button>0</button>
         <button>.</button>
-        <button class="double-width">=</button>
+        <button class="double-width special-color">=</button>
+
        
             </div>
         </div>
