@@ -45,25 +45,22 @@
                 transform: scale(0.95);
             }
 
-               .buttons > button:nth-child(-n+4) {
+             .buttons > button:nth-child(4n+1),
+    .buttons > button:nth-child(4n+4) {
         background-color: orange;
     }
 
-    .buttons > button:nth-child(n+5):nth-child(-n+8),
-    .buttons > button:nth-child(n+9):nth-child(-n+12) {
-        background-color: #00416a ; 
-    }
-
-    .buttons > button:nth-child(n+13):nth-child(-n+16) {
-        background-color: orange; 
-    }
-
-    .buttons > button:last-child {
-        background-color: green;
+    .buttons > button:nth-child(4n+2),
+    .buttons > button:nth-child(4n+3) {
+        background-color: #00416a;  /* Updated the blue color */
     }
 
     .buttons > button:nth-child(5) {
         background-color: pink;
+    }
+
+    .buttons > button:last-child {
+        background-color: green;
     }
         </style>
         <div class="calculator">
