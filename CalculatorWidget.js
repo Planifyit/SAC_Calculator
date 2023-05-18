@@ -143,6 +143,17 @@
                         this._newOperation = true;
                     }
                     break;
+                case '%':
+                try {
+                    this._operation = (parseFloat(this._operation) / 100).toString();
+                    this._display.value = this._operation;
+                } catch(e) {
+                    console.error(e);
+                    this._display.value = 'Error';
+                    this._operation = '';
+                    this._newOperation = true;
+                }
+                     break;
                 case 'C':
                     this._operation = '';
                     break;
