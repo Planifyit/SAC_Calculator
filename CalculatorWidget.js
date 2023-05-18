@@ -78,7 +78,8 @@
     `;
 
    
-       class CustomCalculator extends HTMLElement {
+   
+    class CustomCalculator extends HTMLElement {
         constructor() {
             super();
             this._shadowRoot = this.attachShadow({mode: 'open'});
@@ -87,6 +88,8 @@
             this._display = this._shadowRoot.querySelector('.display');
             this._buttons = Array.from(this._shadowRoot.querySelectorAll('button'));
             this._operation = '';
+            this._result = 0;
+            this._newOperation = true;
         }
 
         connectedCallback() {
@@ -103,16 +106,23 @@
                 case '-':
                 case '*':
                 case '/':
-                    this._operation += ` ${value} `;
+                    if(this._newOperation){
+                        this._operation = this._result.toString() + ` ${value} `;
+                        this._newOperation = false;
+                    }else{
+                        this._operation += ` ${value} `;
+                    }
                     break;
                 case '=':
                     try {
-                        this._display.value = eval(this._operation.replace(/\s/g, ''));
+                        this._result = eval(this._operation.replace(/\s/g, ''));
                         this._operation = '';
+                        this._newOperation = true;
                     } catch(e) {
                         console.error(e);
-                        this._display.value = 'Error';
+                        this._result = 'Error';
                         this._operation = '';
+                        this._newOperation = true;
                     }
                     break;
                 default:
@@ -121,6 +131,8 @@
 
             if (value !== '=') {
                 this._display.value = this._operation;
+            } else {
+                this._display.value = this._result;
             }
         }
     }
