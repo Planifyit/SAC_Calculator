@@ -91,6 +91,7 @@
 
        
             </div>
+            <a href="https://www.linkedin.com/company/planifyit" target="_blank">Follow us on Linkedin - Planifyit</a>
         </div>
     `;
 
