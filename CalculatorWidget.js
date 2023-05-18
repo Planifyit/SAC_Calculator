@@ -52,7 +52,7 @@
 
     .buttons > button:nth-child(4n+2),
     .buttons > button:nth-child(4n+3) {
-        background-color: #00416a;  /* Updated the blue color */
+        background-color: #666666;  
     }
 
     .buttons > button:nth-child(5) {
