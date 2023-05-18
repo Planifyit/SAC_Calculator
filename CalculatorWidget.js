@@ -64,7 +64,7 @@
         <div class="calculator">
     <div class="image-container"></div> 
     <input type="text" class="display" disabled>
-          <input type="text" class="display" disabled>
+
             <div class="buttons">
                 <button>7</button>
                 <button>8</button>
