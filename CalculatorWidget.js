@@ -78,7 +78,7 @@
     `;
 
    
-    class Calculator extends HTMLElement {
+       class CustomCalculator extends HTMLElement {
         constructor() {
             super();
             this._shadowRoot = this.attachShadow({mode: 'open'});
@@ -125,5 +125,5 @@
         }
     }
 
-    customElements.define('calculator-widget', Calculator);
+    customElements.define('custom-calculator', CustomCalculator);
 })();
