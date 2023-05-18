@@ -45,21 +45,26 @@
                 transform: scale(0.95);
             }
 
-            .buttons > button:nth-child(-n+3) {
-                background-color: #f77;
-            }
+               .buttons > button:nth-child(-n+4) {
+        background-color: orange;
+    }
 
-            .buttons > button:nth-child(n+4):nth-child(-n+6) {
-                background-color: #7f7;
-            }
+    .buttons > button:nth-child(n+5):nth-child(-n+8),
+    .buttons > button:nth-child(n+9):nth-child(-n+12) {
+        background-color: indigo; 
+    }
 
-            .buttons > button:nth-child(n+7):nth-child(-n+9) {
-                background-color: #77f;
-            }
+    .buttons > button:nth-child(n+13):nth-child(-n+16) {
+        background-color: orange; 
+    }
 
-            .buttons > button:nth-child(n+10) {
-                background-color: #777;
-            }
+    .buttons > button:last-child {
+        background-color: green;
+    }
+
+    .buttons > button:nth-child(5) {
+        background-color: pink;
+    }
         </style>
         <div class="calculator">
     <div class="image-container"></div> 
