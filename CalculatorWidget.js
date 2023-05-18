@@ -70,7 +70,7 @@
 
             <div class="buttons">
         <button>%</button>
-        <button class="reset">C</button>
+        <button class="special-color">C</button>
         <button><</button>
         <button>/</button>
         <button>7</button>
