@@ -45,23 +45,24 @@
                 transform: scale(0.95);
             }
 
-             .buttons > button:nth-child(4n+1),
-    .buttons > button:nth-child(4n+4) {
-        background-color: orange;
-    }
+            .buttons > button:not(.special-color):nth-child(4n+1),
+            .buttons > button:not(.special-color):nth-child(4n+4) {
+                background-color: orange;
+            }
 
-    .buttons > button:nth-child(4n+2),
-    .buttons > button:nth-child(4n+3) {
-        background-color: #5F6A9D;  
-    }
+            .buttons > button:not(.special-color):nth-child(4n+2),
+            .buttons > button:not(.special-color):nth-child(4n+3) {
+                background-color: #00416a;
+            }
 
-    .buttons > button:nth-child(5) {
-        background-color: pink;
-    }
+            .buttons > button:nth-child(5) {
+                background-color: pink;
+            }
 
-    .buttons > button:last-child {
-        background-color: green;
-    }
+            .buttons > button:last-child {
+                background-color: green;
+                grid-column: span 2;
+            }
         </style>
         <div class="calculator">
     <div class="image-container"></div> 
@@ -86,7 +87,7 @@
         <button>+</button>
         <button>0</button>
         <button>.</button>
-        <button>=</button>
+        <button class="double-width">=</button>
        
             </div>
         </div>
