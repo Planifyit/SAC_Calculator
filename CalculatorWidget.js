@@ -51,7 +51,7 @@
 
     .buttons > button:nth-child(n+5):nth-child(-n+8),
     .buttons > button:nth-child(n+9):nth-child(-n+12) {
-        background-color: indigo blue ; 
+        background-color: #00416a ; 
     }
 
     .buttons > button:nth-child(n+13):nth-child(-n+16) {
