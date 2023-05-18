@@ -40,9 +40,7 @@
                 color: #fff;
                 border-radius: 4px;
             }
-            .buttons > button.reset {
-    background-color: red;
-}
+
             .buttons > button:active {
                 transform: scale(0.95);
             }
@@ -58,7 +56,7 @@
             }
 
             .buttons > button:nth-child(5) {
-                background-color: pink;
+                background-color: red;
             }
 
             .buttons > button:last-child {
