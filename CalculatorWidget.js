@@ -28,7 +28,7 @@
                 border-radius: 4px;
             }
             .follow-link {
-        font-size: 8px;
+        font-size: 10px;
                }
             .buttons {
                 display: grid;
