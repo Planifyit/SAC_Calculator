@@ -54,7 +54,7 @@
 
             .buttons > button:not(.special-color):nth-child(4n+2),
             .buttons > button:not(.special-color):nth-child(4n+3) {
-                background-color: #00416a;
+                background-color: #5F6A9D;
             }
 
             .buttons > button:nth-child(5) {
