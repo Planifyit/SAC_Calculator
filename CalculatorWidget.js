@@ -66,7 +66,10 @@
     <input type="text" class="display" disabled>
 
             <div class="buttons">
-                <button>7</button>
+        <button>%</button>
+        <button>C</button>
+        <button><</button>
+               <button>7</button>
                 <button>8</button>
                 <button>9</button>
                 <button>*</button>
@@ -90,59 +93,69 @@
    
  
     class Calculator extends HTMLElement {
-        constructor() {
-            super();
-            this._shadowRoot = this.attachShadow({mode: 'open'});
-            this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
+    constructor() {
+        super();
+        this._shadowRoot = this.attachShadow({mode: 'open'});
+        this._shadowRoot.appendChild(tmpl.content.cloneNode(true));
 
-            this._display = this._shadowRoot.querySelector('.display');
-            this._buttons = Array.from(this._shadowRoot.querySelectorAll('button'));
-            this._operation = '';
-            this._newOperation = true;
-        }
-
-        connectedCallback() {
-            this._buttons.forEach(button => {
-                button.addEventListener('click', this._onButtonClick.bind(this));
-            });
-        }
-
-        _onButtonClick(event) {
-            const value = event.target.textContent;
-
-            if (this._newOperation && ['+', '-', '*', '/'].includes(value)) {
-                this._operation = this._display.value + ' ' + value + ' ';
-                this._newOperation = false;
-            } else {
-                switch(value) {
-                    case '+':
-                    case '-':
-                    case '*':
-                    case '/':
-                        this._operation += ` ${value} `;
-                        break;
-                    case '=':
-                        try {
-                            this._display.value = eval(this._operation.replace(/\s/g, ''));
-                            this._operation = '';
-                            this._newOperation = true;
-                        } catch(e) {
-                            console.error(e);
-                            this._display.value = 'Error';
-                            this._operation = '';
-                            this._newOperation = true;
-                        }
-                        break;
-                    default:
-                        this._operation += value;
-                }
-            }
-
-            if (value !== '=') {
-                this._display.value = this._operation;
-            }
-        }
+        this._display = this._shadowRoot.querySelector('.display');
+        this._buttons = Array.from(this._shadowRoot.querySelectorAll('button'));
+        this._operation = '';
+        this._newOperation = true;
     }
 
-    customElements.define('calculator-widget', Calculator);
+    connectedCallback() {
+        this._buttons.forEach(button => {
+            button.addEventListener('click', this._onButtonClick.bind(this));
+        });
+    }
+
+    _onButtonClick(event) {
+        const value = event.target.textContent;
+
+        if (this._newOperation && ['+', '-', '*', '/'].includes(value)) {
+            this._operation = this._display.value + ' ' + value + ' ';
+            this._newOperation = false;
+        } else {
+            switch(value) {
+                case '+':
+                case '-':
+                case '*':
+                case '/':
+                    this._operation += ` ${value} `;
+                    break;
+                case '=':
+                    try {
+                        this._display.value = eval(this._operation.replace(/\s/g, ''));
+                        this._operation = '';
+                        this._newOperation = true;
+                    } catch(e) {
+                        console.error(e);
+                        this._display.value = 'Error';
+                        this._operation = '';
+                        this._newOperation = true;
+                    }
+                    break;
+                case 'C':
+                    this._operation = '';
+                    break;
+                case '<':
+                    this._operation = this._operation.slice(0, -1);
+                    break;
+                case '%':
+                    let lastNumber = this._operation.split(' ').pop();
+                    this._operation = this._operation.replace(new RegExp(lastNumber + '$'), lastNumber + '/100');
+                    break;
+                default:
+                    this._operation += value;
+            }
+        }
+
+        if (value !== '=') {
+            this._display.value = this._operation;
+        }
+    }
+}
+
+customElements.define('calculator-widget', Calculator);
 })();
