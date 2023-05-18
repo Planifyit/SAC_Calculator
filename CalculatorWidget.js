@@ -46,6 +46,9 @@
             .buttons > button:active {
                 transform: scale(0.95);
             }
+    .buttons > button.reset {
+        background-color: red;
+    }
 
             .buttons > button:not(.special-color):nth-child(4n+1),
             .buttons > button:not(.special-color):nth-child(4n+4) {
@@ -72,7 +75,7 @@
 
             <div class="buttons">
         <button>%</button>
-        <button class="reset special-color">C</button>
+        <button class="reset">C</button>
         <button><</button>
         <button>/</button>
         <button>7</button>
