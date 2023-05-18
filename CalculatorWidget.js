@@ -27,7 +27,9 @@
                 text-align: right;
                 border-radius: 4px;
             }
-
+            .follow-link {
+        font-size: 8px;
+               }
             .buttons {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -91,7 +93,7 @@
 
        
             </div>
-            <a href="https://www.linkedin.com/company/planifyit" target="_blank">Follow us on Linkedin - Planifyit</a>
+    <a href="https://www.linkedin.com/company/planifyit" target="_blank" class="follow-link">Follow us on Linkedin - Planifyit</a>
         </div>
     `;
 
