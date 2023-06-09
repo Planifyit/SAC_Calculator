@@ -1,13 +1,14 @@
 {
-    "id": "com.planifyit.calculatorwidget",
-    "version": "1.0.0",
-    "name": "Calculator Widget",
-    "description": "A simple calculator widget",
-    "newInstancePrefix": "CalculatorWidget",
-    "icon": "https://planifyit.github.io/SAC_Calculator/icon.png",
-    "vendor": "Planifyit",
+    "name": "calculatorwidget",
+    "description": "Simple Calculator Widget",
+    "newInstancePrefix": "calculatorwidget",
     "eula": "",
+    "vendor": "Planifyit",
     "license": "",
+    "id": "calculatorwidget",
+    "version": "1.0.1",
+    "icon": "",
+    "vendor": "Planifyit",
     "webcomponents": [
         {
             "kind": "main",
@@ -18,14 +19,14 @@
         },
         {
             "kind": "styling",
-            "tag": "style-panel",
+            "tag": "com-sap-sample-calculator-styling",
             "url": "https://planifyit.github.io/SAC_Calculator/style-panel.js",
             "integrity": "",
             "ignoreIntegrity": true
         },
         {
             "kind": "builder",
-            "tag": "builder-panel",
+            "tag": "com-sap-sample-calculator-builder",
             "url": "https://planifyit.github.io/SAC_Calculator/builder-panel.js",
             "integrity": "",
             "ignoreIntegrity": true
@@ -39,6 +40,14 @@
         "height": {
             "type": "integer",
             "default": 400
+        },
+        "numberColor": {
+            "type": "string",
+            "default": "#000000"
+        },
+        "numberOpacity": {
+            "type": "number",
+            "default": 1
         }
     },
     "methods": {
