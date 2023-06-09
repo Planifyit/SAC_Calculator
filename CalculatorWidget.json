@@ -45,9 +45,9 @@
             "type": "string",
             "default": "#000000"
         },
-        "numberOpacity": {
-            "type": "number",
-            "default": 1
+        "decimalPlaces": {
+            "type": "integer",
+            "default": 2
         }
     },
     "methods": {
