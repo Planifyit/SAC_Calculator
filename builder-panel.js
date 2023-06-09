@@ -6,8 +6,8 @@
 				<legend>Calculator Properties</legend>
 				<table>
 					<tr>
-						<td>Number Opacity</td>
-						<td><input id="builder_number_opacity" type="text" size="5" maxlength="5"></td>
+						<td>Decimal Places</td>
+						<td><input id="builder_decimal_places" type="number" min="0" max="10" step="1"></td>
 					</tr>
 				</table>
 				<input type="submit" style="display:none;">
@@ -34,18 +34,18 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							numberOpacity: this.numberOpacity
+							decimalPlaces: this.decimalPlaces
 						}
 					}
 			}));
 		}
 
-		set numberOpacity(newOpacity) {
-			this._shadowRoot.getElementById("builder_number_opacity").value = newOpacity;
+		set decimalPlaces(newDecimalPlaces) {
+			this._shadowRoot.getElementById("builder_decimal_places").value = newDecimalPlaces;
 		}
 
-		get numberOpacity() {
-			return this._shadowRoot.getElementById("builder_number_opacity").value;
+		get decimalPlaces() {
+			return this._shadowRoot.getElementById("builder_decimal_places").value;
 		}
 	}
 
