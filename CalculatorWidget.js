@@ -120,7 +120,25 @@
             button.addEventListener('click', this._onButtonClick.bind(this));
         });
     }
+  
+        static get observedAttributes() {
+        return ['number-color'];
+    }
 
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'number-color') {
+            this._updateNumberColor(newValue);
+        }
+    }
+
+    _updateNumberColor(color) {
+        const buttons = this._shadowRoot.querySelectorAll('.buttons > button');
+        buttons.forEach(button => {
+            button.style.color = color;
+        });
+    }
+                
+        
     _onButtonClick(event) {
         const value = event.target.textContent;
 
