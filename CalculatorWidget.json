@@ -17,7 +17,7 @@
             "ignoreIntegrity": true
         },
         {
-            "kind": "styles",
+            "kind": "styling",
             "tag": "style-panel",
             "url": "https://planifyit.github.io/SAC_Calculator/style-panel.js",
             "integrity": "",
