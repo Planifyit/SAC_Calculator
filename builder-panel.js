@@ -43,10 +43,10 @@
 		set decimalPlaces(newDecimalPlaces) {
 			this._shadowRoot.getElementById("builder_decimal_places").value = newDecimalPlaces;
 		}
-
-		get decimalPlaces() {
-			return this._shadowRoot.getElementById("builder_decimal_places").value;
-		}
+get decimalPlaces() {
+    return Number(this._shadowRoot.getElementById("builder_decimal_places").value);
+}
+		
 	}
 
 	customElements.define("com-sap-sample-calculator-builder", CalculatorBuilderPanel);
