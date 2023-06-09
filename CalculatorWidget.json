@@ -1,40 +1,54 @@
 {
-	"name": "calculatorwidget",
-	"description": "Simple Calculator Widget",
-	"newInstancePrefix": "calculatorwidget",
-	"eula": "",
-	"vendor": "Planifyit",
-	"license": "",
-	"id": "calculatorwidget",
-	"version": "1.0.1",
-	"icon": "",
-	"webcomponents": [
-		{
-			"kind": "main",
-			"tag": "calculator-widget",
-			"url": "https://planifyit.github.io/SAC_Calculator/CalculatorWidget.js",
-			"integrity": "",
-			"ignoreIntegrity": true
-		}		
-	],
-	"properties": {
-		"width": {
-			"type": "integer",
-			"default": 300
-		},
-		"height": {
-			"type": "integer",
-			"default": 400
-		}
-	},
-	"methods": {
-		"clear": {
-			"description": "Clear the calculator"
-		}
-	},
-	"events": {
-		"onCalculation": {
-			"description": "Called when a calculation is performed."
-		}
-	}
+    "name": "calculatorwidget",
+    "description": "Simple Calculator Widget",
+    "newInstancePrefix": "calculatorwidget",
+    "eula": "",
+    "vendor": "Planifyit",
+    "license": "",
+    "id": "calculatorwidget",
+    "version": "1.0.1",
+    "icon": "",
+    "webcomponents": [
+        {
+            "kind": "main",
+            "tag": "calculator-widget",
+            "url": "https://planifyit.github.io/SAC_Calculator/CalculatorWidget.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        },
+        {
+            "kind": "styles",
+            "tag": "style-panel",
+            "url": "https://planifyit.github.io/SAC_Calculator/style-panel.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        },
+        {
+            "kind": "builder",
+            "tag": "builder-panel",
+            "url": "https://planifyit.github.io/SAC_Calculator/builder-panel.js",
+            "integrity": "",
+            "ignoreIntegrity": true
+        }
+    ],
+    "properties": {
+        "width": {
+            "type": "integer",
+            "default": 300
+        },
+        "height": {
+            "type": "integer",
+            "default": 400
+        }
+    },
+    "methods": {
+        "clear": {
+            "description": "Clear the calculator"
+        }
+    },
+    "events": {
+        "onCalculation": {
+            "description": "Called when a calculation is performed."
+        }
+    }
 }
