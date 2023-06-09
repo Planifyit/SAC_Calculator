@@ -113,6 +113,7 @@
         this._buttons = Array.from(this._shadowRoot.querySelectorAll('button'));
         this._operation = '';
         this._newOperation = true;
+         this._decimalPlaces = 2; // default decimal places
     }
 
     connectedCallback() {
@@ -121,22 +122,24 @@
         });
     }
   
-        static get observedAttributes() {
-        return ['number-color'];
+static get observedAttributes() {
+        return ['number-color', 'decimal-places'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
         if (name === 'number-color') {
             this._updateNumberColor(newValue);
+        } else if (name === 'decimal-places') {
+            this._decimalPlaces = parseInt(newValue);
         }
     }
-
-    _updateNumberColor(color) {
+  _updateNumberColor(color) {
         const buttons = this._shadowRoot.querySelectorAll('.buttons > button');
         buttons.forEach(button => {
             button.style.color = color;
         });
     }
+     
                 
         
     _onButtonClick(event) {
@@ -155,7 +158,8 @@
                     break;
                 case '=':
                     try {
-                        this._display.value = eval(this._operation.replace(/\s/g, ''));
+                        let result = eval(this._operation.replace(/\s/g, ''));
+                        this._display.value = result.toFixed(this._decimalPlaces);
                         this._operation = '';
                         this._newOperation = true;
                     } catch(e) {
