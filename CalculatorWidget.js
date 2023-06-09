@@ -116,11 +116,18 @@
          this._decimalPlaces = 2; // default decimal places
     }
 
-    connectedCallback() {
-        this._buttons.forEach(button => {
-            button.addEventListener('click', this._onButtonClick.bind(this));
-        });
-    }
+connectedCallback() {
+    this._buttons.forEach(button => {
+        button.addEventListener('click', this._onButtonClick.bind(this));
+    });
+
+    this.addEventListener('propertiesChanged', this._onPropertiesChanged.bind(this));
+}
+
+_onPropertiesChanged(event) {
+    console.log('propertiesChanged event', event.detail);
+    // Update properties based on event.detail
+}
   
 static get observedAttributes() {
         return ['number-color', 'decimal-places'];
