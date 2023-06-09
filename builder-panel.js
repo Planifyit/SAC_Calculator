@@ -26,7 +26,7 @@
 			super();
 			this._shadowRoot = this.attachShadow({mode: "open"});
 			this._shadowRoot.appendChild(template.content.cloneNode(true));
-			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
+			this._shadowRoot.getElementById("builder_decimal_places").addEventListener("change", this._submit.bind(this));
 		}
 
 		_submit(e) {
@@ -43,10 +43,10 @@
 		set decimalPlaces(newDecimalPlaces) {
 			this._shadowRoot.getElementById("builder_decimal_places").value = newDecimalPlaces;
 		}
-get decimalPlaces() {
-    return Number(this._shadowRoot.getElementById("builder_decimal_places").value);
-}
-		
+
+		get decimalPlaces() {
+			return this._shadowRoot.getElementById("builder_decimal_places").value;
+		}
 	}
 
 	customElements.define("com-sap-sample-calculator-builder", CalculatorBuilderPanel);
