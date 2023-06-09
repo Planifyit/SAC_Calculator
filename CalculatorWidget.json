@@ -1,13 +1,13 @@
 {
-    "name": "calculatorwidget",
-    "description": "Simple Calculator Widget",
-    "newInstancePrefix": "calculatorwidget",
-    "eula": "",
+    "id": "com.planifyit.calculatorwidget",
+    "version": "1.0.0",
+    "name": "Calculator Widget",
+    "description": "A simple calculator widget",
+    "newInstancePrefix": "CalculatorWidget",
+    "icon": "https://planifyit.github.io/SAC_Calculator/icon.png",
     "vendor": "Planifyit",
+    "eula": "",
     "license": "",
-    "id": "calculatorwidget",
-    "version": "1.0.1",
-    "icon": "",
     "webcomponents": [
         {
             "kind": "main",
