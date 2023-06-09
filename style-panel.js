@@ -1,4 +1,4 @@
-(function()  {
+(function() {
 	let template = document.createElement("template");
 	template.innerHTML = `
 		<form id="form">
@@ -6,12 +6,8 @@
 				<legend>Calculator Properties</legend>
 				<table>
 					<tr>
-						<td>Button Color</td>
-						<td><input id="styling_button_color" type="text" size="40" maxlength="40"></td>
-					</tr>
-					<tr>
-						<td>Display Color</td>
-						<td><input id="styling_display_color" type="text" size="40" maxlength="40"></td>
+						<td>Number Color</td>
+						<td><input id="styling_number_color" type="text" size="40" maxlength="40"></td>
 					</tr>
 				</table>
 				<input type="submit" style="display:none;">
@@ -32,27 +28,18 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							buttonColor: this.buttonColor,
-							displayColor: this.displayColor
+							numberColor: this.numberColor
 						}
 					}
 			}));
 		}
 
-		set buttonColor(newColor) {
-			this._shadowRoot.getElementById("styling_button_color").value = newColor;
+		set numberColor(newColor) {
+			this._shadowRoot.getElementById("styling_number_color").value = newColor;
 		}
 
-		get buttonColor() {
-			return this._shadowRoot.getElementById("styling_button_color").value;
-		}
-
-		set displayColor(newColor) {
-			this._shadowRoot.getElementById("styling_display_color").value = newColor;
-		}
-
-		get displayColor() {
-			return this._shadowRoot.getElementById("styling_display_color").value;
+		get numberColor() {
+			return this._shadowRoot.getElementById("styling_number_color").value;
 		}
 	}
 
