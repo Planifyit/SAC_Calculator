@@ -117,6 +117,7 @@
     }
 
         
+
         connectedCallback() {
     this._buttons.forEach(button => {
         button.addEventListener('click', this._onButtonClick.bind(this));
@@ -125,10 +126,13 @@
     // Listen for propertiesChanged event
     this.addEventListener('propertiesChanged', (event) => {
         const { decimalPlaces } = event.detail.properties;
-        this.setAttribute('decimal-places', decimalPlaces);
+        this._decimalPlaces = decimalPlaces; // update the property directly
     });
 }
 
+        
+        
+        
 _onPropertiesChanged(event) {
     console.log('propertiesChanged event', event.detail);
     // Update properties based on event.detail
