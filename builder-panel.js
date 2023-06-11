@@ -29,23 +29,21 @@
 			this._shadowRoot.getElementById("builder_decimal_places").addEventListener("change", this._submit.bind(this));
 		}
 
-	_submit(e) {
-    try {
-        e.preventDefault();
-        console.log('decimalPlaces before dispatchEvent:', this.decimalPlaces);
-        this.dispatchEvent(new CustomEvent("propertiesChanged", {
-            detail: {
-                properties: {
-                    decimalPlaces: this.decimalPlaces
-                }
-            }
-        }));
-        console.log('dispatchEvent called');
-    } catch (error) {
-        console.error('_submit error', error);
-    }
-}
 
+
+_submit(e) {
+    e.preventDefault();
+    console.log('Dispatching propertiesChanged event with decimalPlaces:', this.decimalPlaces);
+    this.dispatchEvent(new CustomEvent("propertiesChanged", {
+        detail: {
+            properties: {
+                decimalPlaces: this.decimalPlaces
+            }
+        },
+        bubbles: true, // allow the event to bubble up
+        composed: true // allow the event to pass through shadow DOM boundary
+    }));
+}
 
 
 		set decimalPlaces(newDecimalPlaces) {
