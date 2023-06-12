@@ -140,6 +140,15 @@
     }
      
     }     
+      
+   connectedCallback() {
+     
+        this._shadowRoot.querySelector('button').addEventListener('click', async () => {
+            const dataBinding = this.dataBindings.getDataBinding('myDataBinding');
+            await dataBinding.addDimensionToFeed("dimensions", dimensionId);
+        });
+    }       
+        
         
 _updateEqualColor(color) {
     const equalButton = this._shadowRoot.querySelector('.buttons > button.double-width');
