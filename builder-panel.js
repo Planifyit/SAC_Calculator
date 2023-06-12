@@ -22,33 +22,32 @@
 	`;
 
 	class CalculatorBuilderPanel extends HTMLElement {
-    constructor() {
-        super();
-        this._shadowRoot = this.attachShadow({mode: "open"});
-        this._shadowRoot.appendChild(template.content.cloneNode(true));
-        this._shadowRoot.getElementById("builder_decimal_places").addEventListener("input", this._onInput.bind(this));
-    }
+		constructor() {
+			super();
+			this._shadowRoot = this.attachShadow({mode: "open"});
+			this._shadowRoot.appendChild(template.content.cloneNode(true));
+			this._shadowRoot.getElementById("form").addEventListener("submit", this._submit.bind(this));
+		}
 
-    _onInput(e) {
-        e.preventDefault();
-        this.dispatchEvent(new CustomEvent("input", {
-            detail: {
-                decimalPlaces: this.decimalPlaces
-            },
-            bubbles: true,
-            composed: true
-        }));
-    }
+		_submit(e) {
+			e.preventDefault();
+			this.dispatchEvent(new CustomEvent("propertiesChanged", {
+					detail: {
+						properties: {
+							decimalPlaces: this.decimalPlaces
+						}
+					}
+			}));
+		}
 
-    set decimalPlaces(newDecimalPlaces) {
-        this._shadowRoot.getElementById("builder_decimal_places").value = newDecimalPlaces;
-    }
+		set decimalPlaces(newDecimalPlaces) {
+			this._shadowRoot.getElementById("builder_decimal_places").value = newDecimalPlaces;
+		}
 
-    get decimalPlaces() {
-        return this._shadowRoot.getElementById("builder_decimal_places").value;
-    }
-}
-
+		get decimalPlaces() {
+			return this._shadowRoot.getElementById("builder_decimal_places").value;
+		}
+	}
 
 	customElements.define("com-sap-sample-calculator-builder", CalculatorBuilderPanel);
 })();
