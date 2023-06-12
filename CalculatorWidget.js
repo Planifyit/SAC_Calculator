@@ -130,10 +130,10 @@
             this._decimalPlaces = changedProperties["decimalPlaces"];
         }
    if ("equalColor" in changedProperties) {
-        this._updateEqualColor(this._equalColor);
+        this._updateEqualColor(this.equalColor);
     }
     if ("clearColor" in changedProperties) {
-        this._updateClearColor(this._clearColor);
+        this._updateClearColor(this.clearColor);
     }
      if ("numberColor" in changedProperties) {
         this._updateNumberColor(changedProperties["numberColor"]);
