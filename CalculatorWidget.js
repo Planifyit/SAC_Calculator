@@ -123,12 +123,13 @@ connectedCallback() {
         button.addEventListener('click', this._onButtonClick.bind(this));
     });
 
-    // Listen for input event
-    this.addEventListener('input', (event) => {
-        const { decimalPlaces } = event.detail;
-        this._decimalPlaces = decimalPlaces;
+    // Listen for propertiesChanged event
+    this.addEventListener('propertiesChanged', (event) => {
+        const { decimalPlaces } = event.detail.properties;
+        this._decimalPlaces = decimalPlaces; // update the property directly
     });
 }
+
 
 
         
