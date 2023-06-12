@@ -48,6 +48,14 @@
         "decimalPlaces": {
             "type": "integer",
             "default": 2
+        },
+        "equalColor": {
+            "type": "string",
+            "default": "#00FF00"
+        },
+        "clearColor": {
+            "type": "string",
+            "default": "#FF0000"
         }
     },
     "methods": {
