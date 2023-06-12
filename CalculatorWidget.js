@@ -154,7 +154,17 @@ _updateNumberColor(color) {
     });
 }
   
-              
+  static get observedAttributes() {
+        return ['number-color', 'decimal-places'];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+        if (name === 'number-color') {
+            this._updateNumberColor(newValue);
+        } else if (name === 'decimal-places') {
+            this._decimalPlaces = parseInt(newValue);
+        }
+    }           
         
     _onButtonClick(event) {
         const value = event.target.textContent;
