@@ -125,18 +125,14 @@
         if ("decimalPlaces" in changedProperties) {
             this._decimalPlaces = changedProperties["decimalPlaces"];
         }
-    }        
-
-connectedCallback() {
-    this._buttons.forEach(button => {
-        button.addEventListener('click', this._onButtonClick.bind(this));
-    });
-
-    // Listen for propertiesChanged event
-    this.addEventListener('propertiesChanged', (event) => {
-        const { decimalPlaces } = event.detail.properties;
-        this._decimalPlaces = decimalPlaces; // update the property directly
-    });
+   if ("numberColor" in changedProperties) {
+        this._updateNumberColor(this._props.numberColor);
+    }
+    }     
+        
+_updateNumberColor(color) {
+    const equalButton = this._shadowRoot.querySelector('.buttons > button.double-width');
+    equalButton.style.backgroundColor = color;
 }
 
   
