@@ -131,7 +131,9 @@
     if ("clearColor" in changedProperties) {
         this._updateClearColor(this._clearColor);
     }
-     
+     if ("numberColor" in changedProperties) {
+        this._updateNumberColor(changedProperties["numberColor"]);
+    }
      
     }     
         
@@ -145,6 +147,12 @@ _updateClearColor(color) {
     clearButton.style.backgroundColor = color;
 }
 
+_updateNumberColor(color) {
+    const buttons = this._shadowRoot.querySelectorAll('.buttons > button');
+    buttons.forEach(button => {
+        button.style.color = color;
+    });
+}
   
 static get observedAttributes() {
         return ['number-color', 'decimal-places'];
