@@ -139,15 +139,6 @@ connectedCallback() {
     });
 }
 
-
-
-        
-        
-        
-_onPropertiesChanged(event) {
-    console.log('propertiesChanged event', event.detail);
-    // Update properties based on event.detail
-}
   
 static get observedAttributes() {
         return ['number-color', 'decimal-places'];
