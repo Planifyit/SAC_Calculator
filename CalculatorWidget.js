@@ -125,14 +125,24 @@
         if ("decimalPlaces" in changedProperties) {
             this._decimalPlaces = changedProperties["decimalPlaces"];
         }
-   if ("numberColor" in changedProperties) {
-        this._updateNumberColor(this._props.numberColor);
+   if ("equalColor" in changedProperties) {
+        this._updateEqualColor(this._equalColor);
     }
+    if ("clearColor" in changedProperties) {
+        this._updateClearColor(this._clearColor);
+    }
+     
+     
     }     
         
-_updateNumberColor(color) {
+_updateEqualColor(color) {
     const equalButton = this._shadowRoot.querySelector('.buttons > button.double-width');
     equalButton.style.backgroundColor = color;
+}
+
+_updateClearColor(color) {
+    const clearButton = this._shadowRoot.querySelector('.buttons > button.reset');
+    clearButton.style.backgroundColor = color;
 }
 
   
