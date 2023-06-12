@@ -114,7 +114,11 @@
         this._operation = '';
         this._newOperation = true;
          this._decimalPlaces = 2; // default decimal places
-               this._props = {}; // properties object
+               this._props = {}; // properties 
+          this._buttons.forEach(button => {
+            button.addEventListener('click', this._onButtonClick.bind(this));
+        });
+        
     }
 
  onCustomWidgetBeforeUpdate(changedProperties) {
@@ -154,17 +158,7 @@ _updateNumberColor(color) {
     });
 }
   
-  static get observedAttributes() {
-        return ['number-color', 'decimal-places'];
-    }
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === 'number-color') {
-            this._updateNumberColor(newValue);
-        } else if (name === 'decimal-places') {
-            this._decimalPlaces = parseInt(newValue);
-        }
-    }           
+          
         
     _onButtonClick(event) {
         const value = event.target.textContent;
