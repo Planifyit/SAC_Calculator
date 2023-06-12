@@ -114,9 +114,18 @@
         this._operation = '';
         this._newOperation = true;
          this._decimalPlaces = 2; // default decimal places
+               this._props = {}; // properties object
     }
 
-        
+ onCustomWidgetBeforeUpdate(changedProperties) {
+        this._props = { ...this._props, ...changedProperties };
+    }
+
+ onCustomWidgetAfterUpdate(changedProperties) {
+        if ("decimalPlaces" in changedProperties) {
+            this._decimalPlaces = changedProperties["decimalPlaces"];
+        }
+    }        
 
 connectedCallback() {
     this._buttons.forEach(button => {
