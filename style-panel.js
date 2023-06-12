@@ -13,6 +13,10 @@
 						<td>Clear Button Color</td>
 						<td><input id="styling_clear_color" type="text" size="40" maxlength="40"></td>
 					</tr>
+					<tr>
+						<td>Numbers Color</td>
+						<td><input id="styling_number_color" type="text" size="40" maxlength="40"></td>
+					</tr>
 				</table>
 				<input type="submit" style="display:none;">
 			</fieldset>
@@ -33,7 +37,8 @@
 					detail: {
 						properties: {
 							equalColor: this.equalColor,
-							clearColor: this.clearColor
+							clearColor: this.clearColor,
+							numberColor: this.numberColor
 						}
 					}
 			}));
@@ -53,6 +58,13 @@
 
 		get clearColor() {
 			return this._shadowRoot.getElementById("styling_clear_color").value;
+		}
+		set numberColor(newColor) {
+			this._shadowRoot.getElementById("styling_number_color").value = newColor;
+		}
+
+		get numberColor() {
+			return this._shadowRoot.getElementById("styling_number_color").value;
 		}
 	}
 
