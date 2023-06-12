@@ -141,13 +141,19 @@
      
     }     
       
-   connectedCallback() {
-     
+ connectedCallback() {
+        // Add an event listener for the button click event
         this._shadowRoot.querySelector('button').addEventListener('click', async () => {
             const dataBinding = this.dataBindings.getDataBinding('myDataBinding');
             await dataBinding.addDimensionToFeed("dimensions", dimensionId);
+
+            // Traverse result set
+            this.myDataBinding.data.forEach(row => {
+                // Parse row
+                console.log(row);
+            });
         });
-    }       
+    }
         
         
 _updateEqualColor(color) {
