@@ -147,12 +147,11 @@ static get observedAttributes() {
             this._decimalPlaces = parseInt(newValue);
         }
     }
-  _updateNumberColor(color) {
-        const buttons = this._shadowRoot.querySelectorAll('.buttons > button');
-        buttons.forEach(button => {
-            button.style.color = color;
-        });
-    }
+
+        _updateNumberColor(color) {
+    const equalButton = this._shadowRoot.querySelector('.buttons > button.double-width');
+    equalButton.style.backgroundColor = color;
+}
      
                 
         
