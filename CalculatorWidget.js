@@ -125,7 +125,9 @@
         this._props = { ...this._props, ...changedProperties };
     }
 
- onCustomWidgetAfterUpdate(changedProperties) {
+
+        
+onCustomWidgetAfterUpdate(changedProperties) {
         if ("decimalPlaces" in changedProperties) {
             this._decimalPlaces = changedProperties["decimalPlaces"];
         }
@@ -138,7 +140,12 @@
      if ("numberColor" in changedProperties) {
         this._updateNumberColor(changedProperties["numberColor"]);
     }
-     
+
+    if ("dataBinding" in changedProperties) {
+            this._dataBinding = changedProperties["dataBinding"];
+            // Update your widget's data binding here
+        }
+    
     }     
       
  connectedCallback() {
