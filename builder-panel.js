@@ -9,6 +9,10 @@
 						<td>Decimal Places</td>
 						<td><input id="builder_decimal_places" type="number" min="0" max="10" step="1"></td>
 					</tr>
+                   <tr>
+                        <td>Data Binding</td>
+                        <td><input id="builder_data_binding" type="text"></td>
+                    </tr>
 				</table>
 				<input type="submit" style="display:none;">
 			</fieldset>
@@ -34,7 +38,8 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							decimalPlaces: this.decimalPlaces
+							decimalPlaces: this.decimalPlaces,
+						         dataBinding: this.dataBinding
 						}
 					}
 			}));
@@ -47,6 +52,14 @@
 		get decimalPlaces() {
 			return this._shadowRoot.getElementById("builder_decimal_places").value;
 		}
+	
+	set dataBinding(newDataBinding) {
+            this._shadowRoot.getElementById("builder_data_binding").value = newDataBinding;
+        }
+
+        get dataBinding() {
+            return this._shadowRoot.getElementById("builder_data_binding").value;
+        }
 	}
 
 	customElements.define("com-sap-sample-calculator-builder", CalculatorBuilderPanel);
