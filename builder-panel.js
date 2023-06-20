@@ -54,8 +54,9 @@
 			this.dispatchEvent(new CustomEvent("propertiesChanged", {
 					detail: {
 						properties: {
-							decimalPlaces: this.decimalPlaces,
-						         dataBinding: this.dataBinding
+		   decimalPlaces: this.decimalPlaces,
+                    dimension: this.dimension,
+                    measure: this.measure
 						}
 					}
 			}));
@@ -69,13 +70,21 @@
 			return this._shadowRoot.getElementById("builder_decimal_places").value;
 		}
 	
-	set dataBinding(newDataBinding) {
-            this._shadowRoot.getElementById("builder_data_binding").value = newDataBinding;
-        }
+	set dimension(newDimension) {
+        this._shadowRoot.getElementById("builder_dimension").value = newDimension;
+    }
 
-        get dataBinding() {
-            return this._shadowRoot.getElementById("builder_data_binding").value;
-        }
+    get dimension() {
+        return this._shadowRoot.getElementById("builder_dimension").value;
+    }
+
+    set measure(newMeasure) {
+        this._shadowRoot.getElementById("builder_measure").value = newMeasure;
+    }
+
+    get measure() {
+        return this._shadowRoot.getElementById("builder_measure").value;
+    }
 	}
 
 	customElements.define("com-sap-sample-calculator-builder", CalculatorBuilderPanel);
