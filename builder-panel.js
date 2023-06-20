@@ -1,22 +1,38 @@
 (function() {
 	let template = document.createElement("template");
 	template.innerHTML = `
-		<form id="form">
-			<fieldset>
-				<legend>Calculator Properties</legend>
-				<table>
-					<tr>
-						<td>Decimal Places</td>
-						<td><input id="builder_decimal_places" type="number" min="0" max="10" step="1"></td>
-					</tr>
-                   <tr>
-                        <td>Data Binding</td>
-                        <td><input id="builder_data_binding" type="text"></td>
-                    </tr>
-				</table>
-				<input type="submit" style="display:none;">
-			</fieldset>
-		</form>
+	<form id="form">
+    <fieldset>
+        <legend>Calculator Properties</legend>
+        <table>
+            <tr>
+                <td>Decimal Places</td>
+                <td><input id="builder_decimal_places" type="number" min="0" max="10" step="1"></td>
+            </tr>
+            <tr>
+                <td>Dimension</td>
+                <td>
+                    <select id="builder_dimension">
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Measure</td>
+                <td>
+                    <select id="builder_measure">
+                        <!-- Options will be populated dynamically -->
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" style="display:none;">
+    </fieldset>
+</form>
+
+
+
+  
 		<style>
 		:host {
 			display: block;
