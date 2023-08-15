@@ -202,6 +202,9 @@ _updateNumberColor(color) {
                         this._display.value = result.toFixed(this._decimalPlaces);
                         this._operation = '';
                         this._newOperation = true;
+                //  the onCalculation event after calculation
+                let calculationEvent = new CustomEvent('onCalculation', { detail: { result: this._display.value } });
+                this.dispatchEvent(calculationEvent);
                     } catch(e) {
                         console.error(e);
                         this._display.value = 'Error';
