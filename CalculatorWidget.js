@@ -204,7 +204,7 @@ _updateNumberColor(color) {
                         this._newOperation = true;
                 //  the onCalculation event after calculation
              let calculationEvent = new CustomEvent('onCalculation', { detail: { result: this._display.value } });
-              //  this.dispatchEvent(calculationEvent);
+            this.dispatchEvent(calculationEvent);
                     } catch(e) {
                         console.error(e);
                         this._display.value = 'Error';
